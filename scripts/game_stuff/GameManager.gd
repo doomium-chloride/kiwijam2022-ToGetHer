@@ -5,8 +5,9 @@ const Player = preload("res://scripts/actor_stuff/Player.gd")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player: Node2D = $Icon
+
 onready var testMob: Mob = $TestMob
+onready var player: Node2D = $Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
