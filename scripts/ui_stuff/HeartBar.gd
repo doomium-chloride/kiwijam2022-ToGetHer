@@ -36,3 +36,15 @@ func update():
 		else:
 			heart.setEmpty()
 		hp = max(0, hp-2)
+
+func setValue(hp):
+	value = hp
+	update()
+
+func increaseHp(increase):
+	var newHp = min(maxValue, value + increase)
+	setValue(newHp)
+
+func decreaseHp(decrease):
+	var newHp = max(0, value - decrease)
+	setValue(newHp)
