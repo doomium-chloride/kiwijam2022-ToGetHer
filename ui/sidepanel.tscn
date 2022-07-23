@@ -30,9 +30,30 @@ margin_right = 25.0
 margin_bottom = 125.0
 
 [node name="BatBar" parent="CanvasLayer" instance=ExtResource( 3 )]
-margin_top = 320.0
-margin_bottom = 320.0
+margin_top = 288.0
+margin_bottom = 288.0
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_top = 352.0
+margin_bottom = 352.0
+
+[node name="SlimeText" type="RichTextLabel" parent="CanvasLayer"]
 margin_top = 416.0
-margin_bottom = 416.0
+margin_right = 192.0
+margin_bottom = 456.0
+text = "	
+	1) Transform to slime"
+
+[node name="BatText" type="RichTextLabel" parent="CanvasLayer"]
+margin_top = 448.0
+margin_right = 192.0
+margin_bottom = 488.0
+text = "
+	2) Transform to bat"
+
+[node name="MoleText" type="RichTextLabel" parent="CanvasLayer"]
+margin_top = 480.0
+margin_right = 192.0
+margin_bottom = 520.0
+text = "	
+	3) Transform to mole"

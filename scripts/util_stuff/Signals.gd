@@ -1,9 +1,17 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal resetHp()
+signal damagePlayer(dmg)
+
+signal decayHunger(value)
+signal restoreHunger(value)
+
+signal progressBat()
+signal progressMole()
+
+signal enableBat()
+signal enableMole()
 
 
 # Called when the node enters the scene tree for the first time.
