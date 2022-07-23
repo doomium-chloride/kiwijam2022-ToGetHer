@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 GridManager="*res://scripts/grid_stuff/GridManager.gd"
 Utils="*res://scripts/util_stuff/Utils.gd"
 PathFinding="*res://scripts/grid_stuff/PathFinding.gd"
+MobTypes="*res://scripts/actor_stuff/MobTypes.gd"
 
 [physics]
 

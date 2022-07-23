@@ -3,10 +3,10 @@ const Mob = preload("res://scripts/actor_stuff/Mob.gd")
 
 export var health = 20
 export var hunger = 100
-export var fly_progress = 0
-export var fly_required = 10
-export var swim_progress = 0
-export var swim_required = 10
+export var flyProgress = 0
+export var flyRequired = 10
+export var swimProgress = 0
+export var swimRequired = 10
 
 export var regenAmount = 1
 export var hungerDrainAmount = 1
@@ -19,11 +19,10 @@ func _ready():
 
 func consumeTarget(target: Mob):
 	health -= target.damage
-	#TODO: Add to progress if applicable
-	
+
+	addToMobProgress(target.mobType)
 	#TODO: Provide buff if applicable
 	
-	#TODO: Kill target
 	GridManager.getTile(GridManager.tilemap.world_to_map(target.position)).tileOccupant = null
 	target.queue_free()
 
@@ -39,3 +38,12 @@ func drainHunger():
 func replenishHunger(replenishAmount: int):
 	hunger += replenishAmount
 	
+func addToMobProgress(mobType):
+	if mobType == MobTypes.BAT:
+		increaseProgress(flyProgress, flyRequired)
+	elif mobType == MobTypes.CRAB:
+		increaseProgress(swimProgress, swimRequired)
+		
+func increaseProgress(progressType, progressMax):
+	if (progressType + 1) < progressMax:
+		progressType += 1

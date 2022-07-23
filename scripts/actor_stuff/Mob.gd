@@ -1,5 +1,4 @@
 extends "res://scripts/actor_stuff/Actor.gd"
-
 var PathFinding = load("res://scripts/grid_stuff/PathFinding.gd")
 
 export var alwaysHostile = false
@@ -7,6 +6,7 @@ export var sightRange = 10
 export var aggroLevel = 0
 export var maxAggroLevel = 10
 export var damage = 1
+export var mobType = MobTypes.BAT
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
