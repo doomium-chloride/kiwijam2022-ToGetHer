@@ -1,10 +1,8 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var tilemap : TileMap = get_node("/root/World/TileMap")
+var PathFinding = load("res://scripts/grid_stuff/PathFinding.gd")
+var pathFinding = PathFinding.new()
 var Tile = load("res://scripts/grid_stuff/Tile.gd")
 var walkableTiles = []
 var unWalkableTiles = []
@@ -20,6 +18,7 @@ func separateTiles():
 	for cell in cells:
 		var idx = tilemap.get_cell(cell[0], cell[1]);
 		var colliderShape = tilemap.tile_set.tile_get_shapes(idx)
+		print(tilemap.tile_set.tile_get_z_index(idx))
 		var tile = Tile.new(cell, "mob")
 		if len(colliderShape) > 0:
 			unWalkableTiles.append(tile)
@@ -32,13 +31,13 @@ func isUnwalkableTile(tileLocation):
 	else:
 		return false
 	
-func test():
-	for tile in walkableTiles:
-		print(tile.gridLocation)
-		print(tile.tileOccupant)
+func getPath(startPos: Vector2, endPos: Vector2):
+#	for tile in walkableTiles:
+#		print(tile.gridLocation)
+#		print(tile.tileOccupant)
+	pathFinding.initialisePathfinding()
+	pathFinding.getPath(startPos, endPos)
 		
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
