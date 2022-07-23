@@ -1,5 +1,5 @@
 extends "res://scripts/actor_stuff/Actor.gd"
-const Mob = preload("res://scripts/actor_stuff/Mob.gd")
+#const Mob = load("res://scripts/actor_stuff/Mob.gd")
 
 export var health = 20
 export var hunger = 100
@@ -15,9 +15,10 @@ export var hungerDrainAmount = 1
 func _ready():
 	print("Player call")
 	print(coords())
+	print($Area2D.get_overlapping_bodies())
 	pass # Replace with function body.
 
-func consumeTarget(target: Mob):
+func consumeTarget(target):
 	health -= target.damage
 
 	addToMobProgress(target.mobType)
