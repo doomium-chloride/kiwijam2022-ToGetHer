@@ -7,6 +7,12 @@ var Tile = load("res://scripts/grid_stuff/Tile.gd")
 var walkableTiles = []
 var unWalkableTiles = []
 
+enum TILETYPE {
+	NORMAL = 0,
+	WATER = 1,
+	AIR = 2,
+	FORBIDDEN = 3
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
