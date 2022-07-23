@@ -16,7 +16,8 @@ func randomWalk():
 	if isValidMove(Vector2.RIGHT):
 		validDirs.append(Vector2.RIGHT)
 	if len(validDirs) > 0:
-		return Utils.randomSelect(validDirs)
+#		return Utils.randomSelect(validDirs)
+		pass
 	else:
 		return Vector2.ZERO
 		
