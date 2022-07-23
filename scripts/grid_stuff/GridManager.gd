@@ -31,6 +31,27 @@ func isUnwalkableTile(tileLocation):
 		return true
 	else:
 		return false
+
+func isWalkableLocation(location : Vector2):
+	for tile in walkableTiles:
+		if location == tile.gridLocation:
+			return true
+	return false
+
+func isUnwalkableLocation(location : Vector2):
+	for tile in unWalkableTiles:
+		if location == tile.gridLocation:
+			return true
+	return false
+		
+func getTile(location : Vector2):
+	for tile in walkableTiles:
+		if location == tile.gridLocation:
+			return tile
+	for tile in unWalkableTiles:
+		if location == tile.gridLocation:
+			return tile
+	return null
 	
 func test():
 	for tile in walkableTiles:
