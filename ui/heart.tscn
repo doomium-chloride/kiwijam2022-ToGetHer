@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/hearts/border.png" type="Texture" id=1]
 [ext_resource path="res://assets/hearts/background.png" type="Texture" id=2]
-[ext_resource path="res://assets/hearts/heart.png" type="Texture" id=3]
+[ext_resource path="res://assets/hearts/blueheart.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ui_stuff/Heart.gd" type="Script" id=4]
 
 [node name="Heart" type="Control"]
