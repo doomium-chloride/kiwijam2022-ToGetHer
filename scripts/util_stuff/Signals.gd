@@ -1,17 +1,14 @@
 extends Node
 
 
-signal resetHp()
 signal damagePlayer(dmg)
+signal healPlayer(heal)
 
 signal decayHunger(value)
 signal restoreHunger(value)
 
-signal progressBat()
-signal progressMole()
-
-signal enableBat()
-signal enableMole()
+signal progressForm(form)
+signal enableForm(form)
 
 
 # Called when the node enters the scene tree for the first time.

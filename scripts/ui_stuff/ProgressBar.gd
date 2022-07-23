@@ -1,15 +1,18 @@
 extends Control
 
+export var formType = MobTypes.FOX
 
-var maxValue = 100
-var value = 100
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$TextureProgress.max_value = maxValue
-	$TextureProgress.value = value
+	Signals.connect("progressForm", self, "progress")
 
-
-func setValue(x):
-	value = x
+func progress(form):
+	if form != formType:
+		return
+	var maxValue = $ProgressBar.max_value
+	var currentValue = $ProgressBar.value
+	if currentValue >= maxValue:
+		return
+	var newValue = min(maxValue, currentValue + 1)
+	$ProgressBar.value = newValue
+	if maxValue == newValue:
+		Signals.emit_signal("enableForm", formType)

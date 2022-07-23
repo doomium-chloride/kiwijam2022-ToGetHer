@@ -7,6 +7,8 @@ var hearts : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Signals.connect("damagePlayer", self, "decreaseHp")
+	Signals.connect("healPlayer", self, "increaseHp")
 	initHeartsArray()
 	update()
 
