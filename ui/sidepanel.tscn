@@ -1,5 +1,21 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://ui/heartbar.tscn" type="PackedScene" id=1]
+
+[node name="SidePanel" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 192.0
+margin_bottom = 608.0
+color = Color( 0.286275, 0.168627, 0.137255, 1 )
+
+[node name="HeartBar" parent="CanvasLayer" instance=ExtResource( 1 )]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_scale = Vector2( 1.5, 1.5 )
