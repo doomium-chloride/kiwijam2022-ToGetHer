@@ -24,7 +24,6 @@ func separateTiles():
 		var idx = tilemap.get_cell(cell[0], cell[1]);
 		var colliderShape = tilemap.tile_set.tile_get_shapes(idx)
 		var worldPos = Vector2(cell[0] * 16, cell[1] * 16)
-		print(tilemap.tile_set.tile_get_z_index(idx))
 		var tile = Tile.new(cell, worldPos, null)
 		if len(colliderShape) > 0:
 			unWalkableTiles.append(tile)
