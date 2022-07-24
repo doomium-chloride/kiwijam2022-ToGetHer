@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Witch%20Waltz.mp3-08a4ad6a29284ab0f874bc0370a47f33.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Witch%20Waltz.mp3"
+dest_files=[ "res://.import/Witch%20Waltz.mp3-08a4ad6a29284ab0f874bc0370a47f33.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
