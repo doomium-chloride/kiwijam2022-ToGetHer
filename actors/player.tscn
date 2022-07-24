@@ -4,12 +4,14 @@
 [ext_resource path="res://scripts/actor_stuff/Player.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 150.0
 
 [node name="Player" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
+z_index = 100
 texture = ExtResource( 1 )
 centered = false
 

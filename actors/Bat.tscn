@@ -25,6 +25,7 @@ maxAggroLevel = 5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 8, 8 )
+z_index = 99
 frames = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
