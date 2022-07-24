@@ -57,3 +57,10 @@ margin_right = 192.0
 margin_bottom = 520.0
 text = "	
 	3) Transform to mole"
+
+[node name="SlimeText2" type="RichTextLabel" parent="CanvasLayer"]
+margin_top = 96.0
+margin_right = 192.0
+margin_bottom = 136.0
+text = "		
+				Hunger"
