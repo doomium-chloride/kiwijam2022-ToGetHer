@@ -1,6 +1,10 @@
 extends Node
 
 onready var tilemap : TileMap = get_node("/root/World/TileMap")
+onready var foregroundtilemap : TileMap = get_node("/root/World/ForegroundTileMap")
+onready var backgroundtilemap : TileMap = get_node("/root/World/BackgroundTileMap")
+onready var foremostgroundtilemap : TileMap = get_node("/root/World/ForemostgroundTileMap")
+
 var PathFinding = load("res://scripts/grid_stuff/PathFinding.gd")
 var pathFinding = PathFinding.new()
 var Tile = load("res://scripts/grid_stuff/Tile.gd")
