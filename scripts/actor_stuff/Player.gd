@@ -25,7 +25,9 @@ func consumeTarget(target: Mob):
 	if target != null:
 		health -= target.damage
 		Signals.emit_signal("setHealth", health)
-
+		if health <= 0:
+			Utils.goto_scene("res://ui/gameover.tscn")
+			return
 
 		addToMobProgress(target.mobType)
 		#TODO: Provide buff if applicable
