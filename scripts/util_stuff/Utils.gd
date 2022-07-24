@@ -2,6 +2,11 @@ extends Node
 
 var current_scene = null
 
+func _ready():
+	randomize()
+	var root = get_tree().get_root()
+	current_scene = root.get_child(root.get_child_count() - 1)
+
 # 50% chance
 func flipCoin():
 	var coin = randi() % 2
@@ -41,6 +46,8 @@ func _deferred_goto_scene(path):
 
 	# Add it to the active scene, as child of root.
 	get_tree().get_root().add_child(current_scene)
+	
+	get_tree().get_root().get_node("GridManager")._ready()
 
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)

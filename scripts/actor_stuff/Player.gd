@@ -47,6 +47,8 @@ func recoverHealth(recoverAmount: int):
 func drainHunger():
 	hunger -= hungerDrainAmount
 	Signals.emit_signal("setHunger", hunger)
+	if hunger <= 0:
+		Utils.goto_scene("res://ui/gameover.tscn")
 	
 func replenishHunger(replenishAmount: int):
 	hunger += replenishAmount
