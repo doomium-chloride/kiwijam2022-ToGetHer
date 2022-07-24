@@ -91,14 +91,18 @@ func getSpawnTiles(start: Vector2, end: Vector2):
 	var diff = end - start
 	for x in range(diff.x+1):
 		for y in range(diff.y+1):
-			if GridManager.getTile(currentPos + Vector2(x, y)).tileType == GridManager.TILETYPE.NORMAL:		
-				spawnTiles.append(GridManager.getTile(currentPos + Vector2(x, y)))		
+			var tile = GridManager.getTile(currentPos + Vector2(x, y))
+			if tile != null:
+				if tile.tileType == GridManager.TILETYPE.NORMAL:		
+					spawnTiles.append(GridManager.getTile(currentPos + Vector2(x, y)))		
 	return spawnTiles
 		
 
 func chooseSpawnTiles(availableTiles, requiredAmount):
 	var unusedTiles = availableTiles
 	var chosenTiles = []
+	if len(unusedTiles) == 0:
+		return chosenTiles
 	for i in range(requiredAmount):
 		var randomTile = Utils.randomSelect(unusedTiles)
 		chosenTiles.append(randomTile)
