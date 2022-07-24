@@ -84,6 +84,12 @@ animations = [ {
 [node name="Player" type="Node2D"]
 script = ExtResource( 2 )
 
+
+
+z_index = 100
+texture = ExtResource( 1 )
+centered = false
+
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( -96, 0 )
 current = true

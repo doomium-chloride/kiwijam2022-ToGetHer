@@ -35,6 +35,9 @@ script = ExtResource( 1 )
 maxAggroLevel = 5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+z_index = 99
+
 frames = SubResource( 2 )
 frame = 1
 playing = true

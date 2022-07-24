@@ -53,13 +53,13 @@ func canSeePlayer(playerCoord : Vector2):
 func move(dir : Vector2):
 	var oldCoords = coords()
 	var newCoords = oldCoords + dir
-	var validMove = GridManager.isWalkableLocation(newCoords)
-	if validMove:
+	if GridManager.getTile(newCoords).tileType == GridManager.TILETYPE.NORMAL:	
 		if GridManager.getTile(newCoords).tileOccupant == null:
 			position = GridManager.tilemap.map_to_world(newCoords)
 			GridManager.getTile(newCoords).tileOccupant = self
 			GridManager.getTile(oldCoords).tileOccupant = null
-	return validMove
+			return true
+	return false
 
 # call this method to get the Mob to execute its turn
 func executeTurn():
@@ -71,6 +71,3 @@ func executeTurn():
 		#GameManager.moveUnit(self, currentTile().gridLocation, destinationPos)
 		move(movementDirection)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

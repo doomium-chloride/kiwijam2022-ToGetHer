@@ -1,6 +1,7 @@
 extends Node2D
 var Mob = load("res://scripts/actor_stuff/Mob.gd")
 var Player = load("res://scripts/actor_stuff/Player.gd")
+var Bat = load("res://actors/Bat.tscn")
 #class_name Actor
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,9 +15,14 @@ var moleUnlocked = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GridManager.separateTiles()
+	#Spawn bats
+	
+	#TODO: Get tiles for bats
+	var batSpawnableTiles = getSpawnTiles(Vector2(8, 4), Vector2(15, 10))
+	var batChosenTiles = chooseSpawnTiles(batSpawnableTiles, 6)
+	for tile in batChosenTiles:
+		spawnMob(Bat, tile)
 
-	#GridManager.test()
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,8 +43,7 @@ func _input(event):
 			if is_instance_valid(mob):
 				print("Testo " + str(mob))
 				mob.executeTurn()
-		#TODO: Get all mobs within a vicinity and have them act
-		
+
 		#Post action events
 		player.regenHealth()
 		player.drainHunger()
@@ -87,3 +92,32 @@ func getMobsInVicinity():
 		newMobs.append(collider.get_owner())
 	mobsInVicinity = newMobs
 	print(mobsInVicinity)
+
+func getSpawnTiles(start: Vector2, end: Vector2):
+	var spawnTiles = []
+	var currentPos = start
+	var diff = end - start
+	for x in range(diff.x+1):
+		for y in range(diff.y+1):
+			var tile = GridManager.getTile(currentPos + Vector2(x, y))
+			if tile != null:
+				if tile.tileType == GridManager.TILETYPE.NORMAL:		
+					spawnTiles.append(GridManager.getTile(currentPos + Vector2(x, y)))		
+	return spawnTiles
+		
+
+func chooseSpawnTiles(availableTiles, requiredAmount):
+	var unusedTiles = availableTiles
+	var chosenTiles = []
+	if len(unusedTiles) == 0:
+		return chosenTiles
+	for i in range(requiredAmount):
+		var randomTile = Utils.randomSelect(unusedTiles)
+		chosenTiles.append(randomTile)
+		unusedTiles.erase(randomTile)
+	return chosenTiles
+
+func spawnMob(mob, tile):
+	var mobInstance = mob.instance()
+	mobInstance.position = GridManager.tilemap.map_to_world(tile.gridLocation)
+	add_child(mobInstance)
