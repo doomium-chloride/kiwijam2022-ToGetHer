@@ -11,6 +11,7 @@ export var mobType = MobTypes.BAT
 func _ready():
 	pass # Replace with function body.
 
+
 func randomWalk():
 	var validDirs = []
 	if isValidMove(Vector2.UP):
