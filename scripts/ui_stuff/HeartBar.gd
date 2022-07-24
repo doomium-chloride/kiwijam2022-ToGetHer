@@ -9,6 +9,7 @@ var hearts : Array = []
 func _ready():
 	Signals.connect("damagePlayer", self, "decreaseHp")
 	Signals.connect("healPlayer", self, "increaseHp")
+	Signals.connect("setHealth", self, "setValue")
 	initHeartsArray()
 	update()
 

@@ -20,6 +20,7 @@ func _ready():
 
 func consumeTarget(target):
 	health -= target.damage
+	Signals.emit_signal("setHealth", health)
 
 	addToMobProgress(target.mobType)
 	#TODO: Provide buff if applicable
@@ -29,15 +30,19 @@ func consumeTarget(target):
 
 func regenHealth():
 	health += regenAmount
+	Signals.emit_signal("setHealth", health)
 	
 func recoverHealth(recoverAmount: int):
 	health += recoverAmount
+	Signals.emit_signal("setHealth", health)
 	
 func drainHunger():
 	hunger -= hungerDrainAmount
+	Signals.emit_signal("setHunger", hunger)
 	
 func replenishHunger(replenishAmount: int):
 	hunger += replenishAmount
+	Signals.emit_signal("setHunger", hunger)
 	
 func addToMobProgress(mobType):
 	if mobType == MobTypes.BAT:

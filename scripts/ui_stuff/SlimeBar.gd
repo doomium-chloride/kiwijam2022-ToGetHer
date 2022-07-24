@@ -10,6 +10,7 @@ export var value = 100
 func _ready():
 	Signals.connect("decayHunger", self, "decayHunger")
 	Signals.connect("restoreHunger", self, "restoreHunger")
+	Signals.connect("setHunger", self, "setValue")
 	setValue(value)
 
 func setValue(newValue):

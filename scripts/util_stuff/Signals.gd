@@ -3,9 +3,11 @@ extends Node
 
 signal damagePlayer(dmg)
 signal healPlayer(heal)
+signal setHealth(hp)
 
 signal decayHunger(value)
 signal restoreHunger(value)
+signal setHunger(value)
 
 signal progressForm(form)
 signal enableForm(form)
