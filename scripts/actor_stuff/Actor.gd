@@ -20,10 +20,12 @@ func isValidMove(dir : Vector2):
 	return !GridManager.isUnwalkableLocation(newCoords)
 
 func move(dir : Vector2):
-	var newCoords = coords() + dir
-	var validMove = !GridManager.isUnwalkableLocation(newCoords)
+	var oldCoords = coords()
+	var newCoords = oldCoords + dir
+	var validMove = GridManager.isWalkableLocation(newCoords)
 	if validMove:
-		position = GridManager.tilemap.map_to_world(newCoords)
+		if GridManager.getTile(newCoords).tileOccupant == null:
+			position = GridManager.tilemap.map_to_world(newCoords)
 	return validMove
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
