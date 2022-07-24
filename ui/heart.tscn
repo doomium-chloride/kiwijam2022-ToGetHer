@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/hearts/border.png" type="Texture" id=1]
+[ext_resource path="res://assets/hearts/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/hearts/blueheart.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ui_stuff/Heart.gd" type="Script" id=4]
+
+[node name="Heart" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+max_value = 2.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 1 )
+texture_progress = ExtResource( 3 )
