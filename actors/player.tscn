@@ -55,6 +55,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 8 )
 animation = "front"
-frame = 5
 playing = true
 centered = false
