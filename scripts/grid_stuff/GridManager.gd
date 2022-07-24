@@ -10,7 +10,7 @@ var unWalkableTiles = []
 enum TILETYPE {
 	NORMAL = 0,
 	WATER = 1,
-	AIR = 2,
+	UNDERGROUND = 2,
 	FORBIDDEN = 3
 }
 
@@ -23,12 +23,13 @@ func separateTiles():
 	for cell in cells:
 		var idx = tilemap.get_cell(cell[0], cell[1]);
 		var colliderShape = tilemap.tile_set.tile_get_shapes(idx)
-		var worldPos = Vector2(cell[0] * 16, cell[1] * 16)
-		var tile = Tile.new(cell, worldPos, null)
-		if len(colliderShape) > 0:
-			unWalkableTiles.append(tile)
-		else:
-			walkableTiles.append(tile)
+		var tileType = tilemap.tile_set.tile_get_z_index(idx)
+		var tile = Tile.new(cell, tileType, null)
+		walkableTiles.append(tile)
+#		if len(colliderShape) > 0:
+#			unWalkableTiles.append(tile)
+#		else:
+#			walkableTiles.append(tile)
 			
 func isUnwalkableTile(tileLocation):
 	if unWalkableTiles.has(tileLocation):

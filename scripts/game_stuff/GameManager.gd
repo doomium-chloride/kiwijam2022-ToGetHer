@@ -40,8 +40,7 @@ func _input(event):
 			if is_instance_valid(mob):
 				print("Testo " + str(mob))
 				mob.executeTurn()
-		#TODO: Get all mobs within a vicinity and have them act
-		
+
 		#Post action events
 		player.regenHealth()
 		player.drainHunger()
@@ -91,8 +90,8 @@ func getSpawnTiles(start: Vector2, end: Vector2):
 	var diff = end - start
 	for x in range(diff.x+1):
 		for y in range(diff.y+1):
-			print(currentPos + Vector2(x, y))
-			spawnTiles.append(GridManager.getTile(currentPos + Vector2(x, y)))		
+			if GridManager.getTile(currentPos + Vector2(x, y)).tileType == GridManager.TILETYPE.NORMAL:		
+				spawnTiles.append(GridManager.getTile(currentPos + Vector2(x, y)))		
 	return spawnTiles
 		
 
