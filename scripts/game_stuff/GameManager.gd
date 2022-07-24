@@ -9,6 +9,8 @@ var Bat = load("res://actors/Bat.tscn")
 
 onready var player: Node2D = $Player
 var mobsInVicinity = []
+var batUnlocked = false
+var moleUnlocked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,6 +51,12 @@ func _input(event):
 		print("Player Health: " + str(player.health))
 		print("Player Hunger: " + str(player.hunger))
 		print("Player Fly Progress: " + str(player.flyProgress))
+	elif(event.is_action_pressed("transform_slime")):
+		player.morph(null)
+	elif(event.is_action_pressed("transform_mole") and moleUnlocked):
+		player.morph(MobTypes.MOLE)
+	elif(event.is_action_pressed("transform_bat") and batUnlocked):
+		player.morph(MobTypes.BAT)
 	
 func moveUnit(unit, prevLocation: Vector2, moveLocation: Vector2):
 	if GridManager.isWalkableLocation(moveLocation): 

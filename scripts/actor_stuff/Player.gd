@@ -21,11 +21,21 @@ func _ready():
 	$Camera2D/CanvasLayer.add_child(sidePanelUi)
 	pass # Replace with function body.
 
+func morph(form):
+	if form == null:
+		$AnimatedSprite.animation = "front"
+	if form == MobTypes.BAT:
+		$AnimatedSprite.animation = "bat"
+	elif form == MobTypes.MOLE:
+		$AnimatedSprite.animation = "mole"
+
 func consumeTarget(target: Mob):
 	if target != null:
 		health -= target.damage
 		Signals.emit_signal("setHealth", health)
-
+		if health <= 0:
+			Utils.goto_scene("res://ui/gameover.tscn")
+			return
 
 		addToMobProgress(target.mobType)
 		#TODO: Provide buff if applicable
@@ -45,6 +55,8 @@ func recoverHealth(recoverAmount: int):
 func drainHunger():
 	hunger -= hungerDrainAmount
 	Signals.emit_signal("setHunger", hunger)
+	if hunger <= 0:
+		Utils.goto_scene("res://ui/gameover.tscn")
 	
 func replenishHunger(replenishAmount: int):
 	hunger += replenishAmount

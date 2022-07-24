@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ui/heartbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/slimebar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/batbar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/molebar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/humanbar.tscn" type="PackedScene" id=5]
 
 [node name="SidePanel" type="Control"]
 anchor_right = 1.0
@@ -37,24 +38,28 @@ margin_bottom = 288.0
 margin_top = 352.0
 margin_bottom = 352.0
 
-[node name="SlimeText" type="RichTextLabel" parent="CanvasLayer"]
+[node name="HumanBar" parent="CanvasLayer" instance=ExtResource( 5 )]
 margin_top = 416.0
+margin_bottom = 416.0
+
+[node name="SlimeText" type="RichTextLabel" parent="CanvasLayer"]
+margin_top = 480.0
 margin_right = 192.0
-margin_bottom = 456.0
+margin_bottom = 520.0
 text = "	
 	1) Transform to slime"
 
 [node name="BatText" type="RichTextLabel" parent="CanvasLayer"]
-margin_top = 448.0
+margin_top = 512.0
 margin_right = 192.0
-margin_bottom = 488.0
+margin_bottom = 552.0
 text = "
 	2) Transform to bat"
 
 [node name="MoleText" type="RichTextLabel" parent="CanvasLayer"]
-margin_top = 480.0
+margin_top = 544.0
 margin_right = 192.0
-margin_bottom = 520.0
+margin_bottom = 584.0
 text = "	
 	3) Transform to mole"
 
