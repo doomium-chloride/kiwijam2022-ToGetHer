@@ -1,20 +1,18 @@
 extends Node2D
-const Mob = preload("res://scripts/actor_stuff/Mob.gd")
-const Player = preload("res://scripts/actor_stuff/Player.gd")
+var Mob = load("res://scripts/actor_stuff/Mob.gd")
+var Player = load("res://scripts/actor_stuff/Player.gd")
 #class_name Actor
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-onready var testMob = $TestMob
 onready var player: Node2D = $Player
 var mobsInVicinity = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GridManager.separateTiles()
-	#GridManager.getTile(GridManager.tilemap.world_to_map(testMob.position)).tileOccupant = testMob
-	testMob.currentTile().tileOccupant = testMob
+
 	#GridManager.test()
 	pass # Replace with function body.
 
