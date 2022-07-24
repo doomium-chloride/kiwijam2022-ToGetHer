@@ -24,7 +24,7 @@ func _ready():
 func consumeTarget(target: Mob):
 	if target != null:
 		health -= target.damage
-    Signals.emit_signal("setHealth", health)
+		Signals.emit_signal("setHealth", health)
 
 
 		addToMobProgress(target.mobType)
