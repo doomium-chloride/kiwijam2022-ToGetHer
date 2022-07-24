@@ -1,5 +1,6 @@
 extends "res://scripts/actor_stuff/Actor.gd"
-#const Mob = load("res://scripts/actor_stuff/Mob.gd")
+const Mob = preload("res://scripts/actor_stuff/Mob.gd")
+var SidePanel = load("res://ui/sidepanel.tscn")
 
 export var health = 20
 export var hunger = 100
@@ -16,12 +17,14 @@ func _ready():
 	print("Player call")
 	print(coords())
 	print($Area2D.get_overlapping_bodies())
+	var sidePanelUi = SidePanel.instance()
+	$Camera2D/CanvasLayer.add_child(sidePanelUi)
 	pass # Replace with function body.
 
 func consumeTarget(target: Mob):
 	if target != null:
 		health -= target.damage
-    Signals.emit_signal("setHealth", health)
+		Signals.emit_signal("setHealth", health)
 
 
 		addToMobProgress(target.mobType)
