@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=44 format=2]
+[gd_resource type="TileSet" load_steps=47 format=2]
 
 [ext_resource path="res://assets/SuperRetroWorld/exterior-pack-free_version/atlas.png" type="Texture" id=1]
 [ext_resource path="res://assets/MiniWorldSprites/Ground/Shore.png" type="Texture" id=2]
 [ext_resource path="res://assets/SuperRetroWorld/Package_Marketplace_week40/Package_Marketplace/atlas_16x.png" type="Texture" id=3]
+[ext_resource path="res://assets/SuperRetroWorld/dungeon-pack-free_version/atlas.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 32, 16, 32, 16, 48, 0, 48 )
@@ -124,6 +125,12 @@ points = PoolVector2Array( -64, 0, -48, 0, -48, 48, -64, 48 )
 [sub_resource type="ConvexPolygonShape2D" id=40]
 points = PoolVector2Array( 0, 16, 16, 16, 16, 32, 0, 32 )
 
+[sub_resource type="ConvexPolygonShape2D" id=41]
+points = PoolVector2Array( 0, 32, 16, 32, 16, 48, 0, 48 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
 [resource]
 resource_local_to_scene = true
 0/name = "atlas.png 0"
@@ -148,7 +155,7 @@ resource_local_to_scene = true
 0/shape_one_way = false
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
-0/z_index = 0
+0/z_index = -2
 1/name = ""
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
@@ -171,8 +178,8 @@ resource_local_to_scene = true
 1/shape_one_way = false
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
-1/z_index = 0
-2/name = "Boulder"
+1/z_index = -2
+2/name = "0_Boulder"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
@@ -201,7 +208,7 @@ resource_local_to_scene = true
 "shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-2/z_index = 0
+2/z_index = -1
 3/name = "atlas.png 3"
 3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
@@ -215,8 +222,8 @@ resource_local_to_scene = true
 3/shape_one_way = false
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
-3/z_index = 0
-4/name = "Water"
+3/z_index = -2
+4/name = "0_Water"
 4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
@@ -237,7 +244,7 @@ resource_local_to_scene = true
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 1
-5/name = "Sand"
+5/name = "0_Sand"
 5/texture = ExtResource( 2 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
@@ -1564,3 +1571,159 @@ resource_local_to_scene = true
 61/shape_one_way_margin = 0.0
 61/shapes = [  ]
 61/z_index = 0
+62/name = "atlas.png 62"
+62/texture = ExtResource( 1 )
+62/tex_offset = Vector2( 0, 0 )
+62/modulate = Color( 1, 1, 1, 1 )
+62/region = Rect2( 64, 224, 16, 16 )
+62/tile_mode = 0
+62/occluder_offset = Vector2( 0, 0 )
+62/navigation_offset = Vector2( 0, 0 )
+62/shape_offset = Vector2( 0, 0 )
+62/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+62/shape_one_way = false
+62/shape_one_way_margin = 0.0
+62/shapes = [  ]
+62/z_index = -2
+63/name = "atlas.png 63"
+63/texture = ExtResource( 4 )
+63/tex_offset = Vector2( 0, 0 )
+63/modulate = Color( 1, 1, 1, 1 )
+63/region = Rect2( 0, 16, 48, 32 )
+63/tile_mode = 2
+63/autotile/icon_coordinate = Vector2( 0, 0 )
+63/autotile/tile_size = Vector2( 16, 16 )
+63/autotile/spacing = 0
+63/autotile/occluder_map = [  ]
+63/autotile/navpoly_map = [  ]
+63/autotile/priority_map = [  ]
+63/autotile/z_index_map = [  ]
+63/occluder_offset = Vector2( 0, 0 )
+63/navigation_offset = Vector2( 0, 0 )
+63/shape_offset = Vector2( 0, 0 )
+63/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+63/shape_one_way = false
+63/shape_one_way_margin = 0.0
+63/shapes = [  ]
+63/z_index = 0
+64/name = "atlas.png 64"
+64/texture = ExtResource( 4 )
+64/tex_offset = Vector2( 0, 0 )
+64/modulate = Color( 1, 1, 1, 1 )
+64/region = Rect2( 80, 80, 48, 80 )
+64/tile_mode = 1
+64/autotile/bitmask_mode = 1
+64/autotile/bitmask_flags = [ Vector2( 0, 0 ), 510, Vector2( 0, 1 ), 447, Vector2( 0, 2 ), 432, Vector2( 0, 3 ), 438, Vector2( 0, 4 ), 54, Vector2( 1, 0 ), 507, Vector2( 1, 1 ), 255, Vector2( 1, 2 ), 504, Vector2( 1, 3 ), 511, Vector2( 1, 4 ), 63, Vector2( 2, 2 ), 216, Vector2( 2, 3 ), 219, Vector2( 2, 4 ), 27 ]
+64/autotile/icon_coordinate = Vector2( 0, 0 )
+64/autotile/tile_size = Vector2( 16, 16 )
+64/autotile/spacing = 0
+64/autotile/occluder_map = [  ]
+64/autotile/navpoly_map = [  ]
+64/autotile/priority_map = [  ]
+64/autotile/z_index_map = [  ]
+64/occluder_offset = Vector2( 0, 0 )
+64/navigation_offset = Vector2( 0, 0 )
+64/shape_offset = Vector2( 0, 0 )
+64/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+64/shape_one_way = false
+64/shape_one_way_margin = 0.0
+64/shapes = [  ]
+64/z_index = 0
+65/name = "atlas.png 65"
+65/texture = ExtResource( 4 )
+65/tex_offset = Vector2( 0, 0 )
+65/modulate = Color( 1, 1, 1, 1 )
+65/region = Rect2( 96, 32, 16, 48 )
+65/tile_mode = 0
+65/occluder_offset = Vector2( 0, 0 )
+65/navigation_offset = Vector2( 0, 0 )
+65/shape_offset = Vector2( 0, 0 )
+65/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+65/shape = SubResource( 41 )
+65/shape_one_way = false
+65/shape_one_way_margin = 1.0
+65/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 41 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+65/z_index = 0
+66/name = "atlas.png 66"
+66/texture = ExtResource( 4 )
+66/tex_offset = Vector2( 0, 0 )
+66/modulate = Color( 1, 1, 1, 1 )
+66/region = Rect2( 80, 32, 16, 32 )
+66/tile_mode = 2
+66/autotile/icon_coordinate = Vector2( 0, 0 )
+66/autotile/tile_size = Vector2( 16, 16 )
+66/autotile/spacing = 0
+66/autotile/occluder_map = [  ]
+66/autotile/navpoly_map = [  ]
+66/autotile/priority_map = [  ]
+66/autotile/z_index_map = [  ]
+66/occluder_offset = Vector2( 0, 0 )
+66/navigation_offset = Vector2( 0, 0 )
+66/shape_offset = Vector2( 0, 0 )
+66/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+66/shape_one_way = false
+66/shape_one_way_margin = 0.0
+66/shapes = [  ]
+66/z_index = 0
+67/name = "atlas.png 67"
+67/texture = ExtResource( 4 )
+67/tex_offset = Vector2( 0, 0 )
+67/modulate = Color( 1, 1, 1, 1 )
+67/region = Rect2( 48, 16, 64, 16 )
+67/tile_mode = 2
+67/autotile/icon_coordinate = Vector2( 0, 0 )
+67/autotile/tile_size = Vector2( 16, 16 )
+67/autotile/spacing = 0
+67/autotile/occluder_map = [  ]
+67/autotile/navpoly_map = [  ]
+67/autotile/priority_map = [  ]
+67/autotile/z_index_map = [  ]
+67/occluder_offset = Vector2( 0, 0 )
+67/navigation_offset = Vector2( 0, 0 )
+67/shape_offset = Vector2( 0, 0 )
+67/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+67/shape_one_way = false
+67/shape_one_way_margin = 0.0
+67/shapes = [  ]
+67/z_index = 0
+68/name = "atlas.png 68"
+68/texture = ExtResource( 4 )
+68/tex_offset = Vector2( 0, 0 )
+68/modulate = Color( 1, 1, 1, 1 )
+68/region = Rect2( 112, 16, 16, 32 )
+68/tile_mode = 0
+68/occluder_offset = Vector2( 0, 0 )
+68/navigation_offset = Vector2( 0, 0 )
+68/shape_offset = Vector2( 0, 0 )
+68/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+68/shape_one_way = false
+68/shape_one_way_margin = 0.0
+68/shapes = [  ]
+68/z_index = 0
+69/name = "atlas.png 69"
+69/texture = ExtResource( 4 )
+69/tex_offset = Vector2( 0, 0 )
+69/modulate = Color( 1, 1, 1, 1 )
+69/region = Rect2( 0, 144, 32, 32 )
+69/tile_mode = 0
+69/occluder_offset = Vector2( 0, 0 )
+69/navigation_offset = Vector2( 0, 0 )
+69/shape_offset = Vector2( 0, 0 )
+69/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+69/shape = SubResource( 42 )
+69/shape_one_way = false
+69/shape_one_way_margin = 1.0
+69/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+69/z_index = 0

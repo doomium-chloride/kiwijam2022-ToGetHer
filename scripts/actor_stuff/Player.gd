@@ -1,10 +1,15 @@
 extends "res://scripts/actor_stuff/Actor.gd"
+const Mob = preload("res://scripts/actor_stuff/Mob.gd")
 
+export var health = 20
+export var hunger = 100
+export var flyProgress = 0
+export var flyRequired = 10
+export var swimProgress = 0
+export var swimRequired = 10
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+export var regenAmount = 1
+export var hungerDrainAmount = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +17,33 @@ func _ready():
 	print(coords())
 	pass # Replace with function body.
 
+func consumeTarget(target: Mob):
+	health -= target.damage
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	addToMobProgress(target.mobType)
+	#TODO: Provide buff if applicable
+	
+	GridManager.getTile(GridManager.tilemap.world_to_map(target.position)).tileOccupant = null
+	target.queue_free()
+
+func regenHealth():
+	health += regenAmount
+	
+func recoverHealth(recoverAmount: int):
+	health += recoverAmount
+	
+func drainHunger():
+	hunger -= hungerDrainAmount
+	
+func replenishHunger(replenishAmount: int):
+	hunger += replenishAmount
+	
+func addToMobProgress(mobType):
+	if mobType == MobTypes.BAT:
+		increaseProgress(flyProgress, flyRequired)
+	elif mobType == MobTypes.CRAB:
+		increaseProgress(swimProgress, swimRequired)
+		
+func increaseProgress(progressType, progressMax):
+	if (progressType + 1) < progressMax:
+		progressType += 1
